@@ -1,0 +1,24 @@
+#import system modules
+import arcpy
+import csv
+from arcpy import env
+env.workspace = r'H:\Departments\AGSL\GIS\Patrons\2018_06\Erik_Gunn\Test_run'
+
+#Set Constant Variables:
+address_locator = r'H:\Departments\AGSL\GIS\Projects\Stephen\mke_locator.gdb\mke_street_locator'
+address_fields = 'LOCATION'
+
+#Loop through CSV
+tables = arcpy.ListTables()
+
+for t in tables:
+	address_table = t
+	table_string = str(t)
+	year_string = table_string[:4]
+	geocode_result = str(env.workspace) + '\\' + year_string + '\\' + 'geocode_result.shp'
+	
+	arcpy.GeocodeAddresses_geocoding(address_table, address_locator, address_fields, geocode_result, 'STATIC')
+	
+	
+	
+

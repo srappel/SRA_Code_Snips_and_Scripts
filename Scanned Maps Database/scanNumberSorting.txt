@@ -1,0 +1,14 @@
+InStr([AGS Maps].[Scan No],"g")=2 or 0
+IIf(InStr([AGS Maps].[Scan No],"g")=2,"agsmap","am")
+
+
+0123456789AB
+agsmap023488    6
+
+012345678
+am0234855 2
+
+
+
+
+sorter: iif(InStr([AGS Maps].[Scan No],"g")=2,Right([AGS Maps].[Scan No],Len([AGS Maps].[Scan No])-6),iif(InStr([AGS Maps].[Scan No],"g")=0,Right([AGS Maps].[Scan No],Len([AGS Maps].[Scan No])-2),"0"))
