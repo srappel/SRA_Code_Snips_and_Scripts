@@ -34,7 +34,25 @@
           ]
         },
         "properties": {
-          "label": "This polygon uses impossible numbers to resolve."
+          "label": "This polygon uses impossible numbers to resolve. (It also moves the box North a few degrees so it doesn't overlap."
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-183,-20],
+              [-183,-24],
+              [-178,-24],
+              [-178,-20],
+              [-183,-20]
+            ]
+          ]
+        },
+        "properties": {
+          "label": "This polygon uses different impossible numbers to resolve. (It also moves the box South a few degrees so it doesn't overlap."
         }
       },
       {
